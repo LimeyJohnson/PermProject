@@ -30,6 +30,7 @@
             top:400px;
             width:100px;
             height:100px;
+            border:1px solid;
         }
     </style>
 </head>
@@ -40,7 +41,67 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
 
-        var ageOut = [NaN, 8.51, 1.98, 1, 6.42, 6.78, 8.04, NaN, 8.89,2.64, 11.24, NaN, 6.41,7.02,NaN, 8.29, 6.79, 5.11, 3.45, 6.62, 7.59, 9.88, 4.36,6.33,12.80,10.81, 5.82,11.17,2.06, 4.6, 4.07, 5.88, 4.76, 6.74, 5.17, 5.22, 5.40,5.99, 5.82, 11.41, 3.91, 2.75, 6.02,NaN, 7.14, 9.58,5.54,6.64,4.26,7,98,13.99,NaN,4.27,1.18, 6.84, 2.71 ]// 8.89,2.64,11.24,6.41,7.02,8.29,6.79,5.11,3.45,6.62,7.59,9.88,4.36,6.33,12.80,10.81,5.82,11.17,2.06,4.6,4.07,5.88,4.76,6.74,5.17,5.22,5.4,5.99,5.82,11.41,3.91,2.75,6.02,7.14,9.58,5.54,6.64,4.26,7.96,5.94,13.99,4.27,9.07,1.18,6.84,2.71];
+        var ageOut = [
+NaN,
+{ name: "Alabama", aFY2011: 447, tFY2011: 5253, PFY2011: 8.51 },
+{ name: "Alaska", aFY2011: 37, tFY2011: 1871, PFY2011: 1.98 },
+NaN,
+{ name: "Arizona", aFY2011: 699, tFY2011: 10883, PFY2011: 6.42 },
+{ name: "Arkansas", aFY2011: 253, tFY2011: 3732, PFY2011: 6.78 },
+{ name: "California", aFY2011: 4400, tFY2011: 54754, PFY2011: 8.04 },
+NaN,
+{ name: "Colorado", aFY2011: 577, tFY2011: 6488, PFY2011: 8.89 },
+{ name: "Connecticut", aFY2011: 140, tFY2011: 4926, PFY2011: 2.64 },
+{ name: "Delaware", aFY2011: 95, tFY2011: 845, PFY2011: 11.24 },
+NaN,
+{ name: "Florida", aFY2011: 1267, tFY2011: 19760, PFY2011: 6.41 },
+{ name: "Georgia", aFY2011: 533, tFY2011: 7591, PFY2011: 7.02 },
+NaN,
+{ name: "Hawaii", aFY2011: 93, tFY2011: 1122, PFY2011: 8.29 },
+{ name: "Idaho", aFY2011: 92, tFY2011: 1354, PFY2011: 6.79 },
+{ name: "Illinois", aFY2011: 902, tFY2011: 17641, PFY2011: 5.11 },
+{ name: "Indiana", aFY2011: 372, tFY2011: 10779, PFY2011: 3.45 },
+{ name: "Iowa", aFY2011: 420, tFY2011: 6344, PFY2011: 6.62 },
+{ name: "Kansas", aFY2011: 444, tFY2011: 5852, PFY2011: 7.59 },
+{ name: "Kentucky", aFY2011: 658, tFY2011: 6659, PFY2011: 9.88 },
+{ name: "Louisiana", aFY2011: 237, tFY2011: 5432, PFY2011: 4.36 },
+{ name: "Maine", aFY2011: 82, tFY2011: 1296, PFY2011: 6.33 },
+{ name: "Maryland", aFY2011: 699, tFY2011: 5460, PFY2011: 12.80 },
+{ name: "Massachusetts", aFY2011: 932, tFY2011: 8619, PFY2011: 10.81 },
+{ name: "Michigan", aFY2011: 878, tFY2011: 15091, PFY2011: 5.82 },
+{ name: "Minnesota", aFY2011: 558, tFY2011: 4995, PFY2011: 11.17 },
+{ name: "Mississippi", aFY2011: 74, tFY2011: 3597, PFY2011: 2.06 },
+{ name: "Missouri", aFY2011: 424, tFY2011: 9220, PFY2011: 4.60 },
+{ name: "Montana", aFY2011: 73, tFY2011: 1794, PFY2011: 4.07 },
+{ name: "Nebraska", aFY2011: 301, tFY2011: 5117, PFY2011: 5.88 },
+{ name: "Nevada", aFY2011: 221, tFY2011: 4683, PFY2011: 4.76 },
+{ name: "New Hampshire", aFY2011: 50, tFY2011: 743, PFY2011: 6.74 },
+{ name: "New Jersey", aFY2011: 333, tFY2011: 6440, PFY2011: 5.17 },
+{ name: "New Mexico", aFY2011: 97, tFY2011: 1859, PFY2011: 5.22 },
+{ name: "New York", aFY2011: 1349, tFY2011: 24962, PFY2011: 5.40 },
+{ name: "North Carolina", aFY2011: 515, tFY2011: 8601, PFY2011: 5.99 },
+{ name: "North Dakota", aFY2011: 62, tFY2011: 1066, PFY2011: 5.82 },
+{ name: "Ohio", aFY2011: 1377, tFY2011: 12069, PFY2011: 11.41 },
+{ name: "Oklahoma", aFY2011: 324, tFY2011: 8280, PFY2011: 3.91 },
+{ name: "Oregon", aFY2011: 235, tFY2011: 8531, PFY2011: 2.75 },
+{ name: "Pennsylvania", aFY2011: 854, tFY2011: 14175, PFY2011: 6.02 },
+NaN,
+{ name: "Rhode Island", aFY2011: 129, tFY2011: 1806, PFY2011: 7.14 },
+{ name: "South Carolina", aFY2011: 366, tFY2011: 3821, PFY2011: 9.58 },
+{ name: "South Dakota", aFY2011: 78, tFY2011: 1407, PFY2011: 5.54 },
+{ name: "Tennessee", aFY2011: 508, tFY2011: 7647, PFY2011: 6.64 },
+{ name: "Texas", aFY2011: 1283, tFY2011: 30109, PFY2011: 4.26 },
+{ name: "Utah", aFY2011: 215, tFY2011: 2701, PFY2011: 7.96 },
+{ name: "Vermont", aFY2011: 60, tFY2011: 1010, PFY2011: 5.94 },
+{ name: "Virginia", aFY2011: 678, tFY2011: 4846, PFY2011: 13.99 },
+NaN,
+{ name: "Washington", aFY2011: 407, tFY2011: 9533, PFY2011: 4.27 },
+{ name: "West Virginia", aFY2011: 53, tFY2011: 4475, PFY2011: 1.18 },
+{ name: "Wisconsin", aFY2011: 448, tFY2011: 6547, PFY2011: 6.84 },
+{ name: "Wyoming", aFY2011: 24, tFY2011: 886, PFY2011: 2.71 }
+        ];
+
+        
         var width = 960,
             height = 500,
             centered;
@@ -76,8 +137,8 @@
                 .attr("d", path)
                 .style("fill", function (elem) {
                     if (ageOut[elem.id]) {
-                        if (ageOut[elem.id] == 1) { return "yellow"; }
-                        return colorScale(ageOut[elem.id]);
+                        if (ageOut[elem.id].PFY2011 == 1) { return "yellow"; }
+                        return colorScale(ageOut[elem.id].PFY2011);
                     }
                     return "blue";
 
@@ -95,8 +156,14 @@
         function onMouseMove(d) {
             $("#result").text(d.id);
             var event = d3.event;
-            $("#callout").css("left", event.pageX);
-            $("#callout").css("top", event.pageY);
+            event.stopPropagation();
+            var callout = $("#callout");
+            callout.css("left", event.pageX);
+            callout.css("top", event.pageY);
+            if (ageOut[d.id].name) {
+                var htmlTemplate = "<h2>" + ageOut[d.id].name + "</h2><br>Total kids in Foster care:" + ageOut[d.id].tFY2011 + "<br># of Kids aging out:" + ageOut[d.id].aFY2011+"<br>="+ageOut[d.id].PFY2011+"%";
+                callout.html(htmlTemplate)
+            }
 
         }
         function clicked(d) {
